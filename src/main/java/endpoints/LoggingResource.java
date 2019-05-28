@@ -23,20 +23,18 @@ public class LoggingResource {
     @Path("{logId}")
     public Response getLog(@PathParam("logId") int logId) {
         Log log = Database.getLog(logId);
-        return log != null
-                ? Response.ok(log).build()
-                : Response.status(Response.Status.NOT_FOUND).build();
+        return log != null ? Response.ok(log).build() : Response.status(Response.Status.NOT_FOUND).build();
     }
 
     @POST
-    public Response addNewCustomer(Log log) {
+    public Response addLog(Log log) {
         Database.addLog(log);
         return Response.noContent().build();
     }
 
     @DELETE
     @Path("{logId}")
-    public Response deleteCustomer(@PathParam("logId") int logId) {
+    public Response deleteLog(@PathParam("logId") int logId) {
         Database.deleteLog(logId);
         return Response.noContent().build();
     }
