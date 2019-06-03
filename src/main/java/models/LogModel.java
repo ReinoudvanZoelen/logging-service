@@ -1,29 +1,19 @@
 package models;
 
-public class Log {
-    private int id;
+public class LogModel {
     private String message;
     private String source;
 
-    public Log() {
+    public LogModel() {
     }
 
-    public Log(int id, String message, String source) {
-        this.id = id;
+    public LogModel(String message, String source) {
         this.message = message;
         this.source = source;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getMessage() {
-        return message;
+        return this.message;
     }
 
     public void setMessage(String message) {
@@ -31,7 +21,7 @@ public class Log {
     }
 
     public String getSource() {
-        return source;
+        return this.source;
     }
 
     public void setSource(String source) {
