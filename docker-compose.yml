@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  car:
+    image: maven:3.6.0-alpine
+    container_name: "logging-service"
+    command: java -jar /usr/src/target/car-service-1.0-SNAPSHOT.jar
+    ports:
+      - 8080:8080
