@@ -45,7 +45,7 @@ pipeline {
                     steps{
                         node("docker-prod"){
                             git([url: gitUrl, branch: 'master', credentialsId: 'Github'])
-                            sh "docker service rm logging-service_logging"
+                            // sh "docker service rm logging-service_logging"
                             sh "docker stack deploy --with-registry-auth -c docker-compose-production.yml logging-service"
                         }
                     }
