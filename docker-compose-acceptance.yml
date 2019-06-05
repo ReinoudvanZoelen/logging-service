@@ -2,8 +2,8 @@ version: "3"
 
 services:
   logging:
-    image: maven:3.6.0-alpine
+    image: yoksar/logging-service-acceptance
     container_name: "logging-service"
     command: java -jar /usr/src/target/logging-service-1.0-SNAPSHOT.jar
     ports:
-      - 20090:8080
+      - 20080:8080
