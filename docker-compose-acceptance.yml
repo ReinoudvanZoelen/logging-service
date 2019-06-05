@@ -6,4 +6,4 @@ services:
     container_name: "logging-service"
     command: java -jar /usr/src/target/logging-service-1.0-SNAPSHOT.jar
     ports:
-      - 20080:8080
+      - 20090:8080
