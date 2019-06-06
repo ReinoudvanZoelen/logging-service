@@ -5,6 +5,7 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
     gitUrl = 'https://github.com/ReinoudvanZoelen/logging-service.git'
+    scannerHome = tool 'Sonar Scanner' 
   }
   agent any
     stages {
@@ -16,6 +17,12 @@ pipeline {
                 stage('Cloning Git') {
                     steps {
                         git([url: gitUrl, branch: 'master', credentialsId: 'Github'])
+                    }
+                }
+                stage('SonarQube analysis') {
+                steps{
+                    withSonarQubeEnv('Sonar Server') {
+                        sh "${scannerHome}/bin/sonar-scanner"
                     }
                 }
                 stage('Building image') {
