@@ -20,9 +20,10 @@ pipeline {
                     }
                 }
                 stage('SonarQube analysis') {
-                steps{
-                    withSonarQubeEnv('Sonar Server') {
-                        sh "${scannerHome}/bin/sonar-scanner"
+                    steps{
+                        withSonarQubeEnv('Sonar Server') {
+                            sh "${scannerHome}/bin/sonar-scanner"
+                        }
                     }
                 }
                 stage('Building image') {
