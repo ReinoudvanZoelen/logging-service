@@ -19,13 +19,13 @@ pipeline {
                         git([url: gitUrl, branch: 'master', credentialsId: 'Github'])
                     }
                 }
-                stage('SonarQube analysis') {
-                    steps{
-                        withSonarQubeEnv('Sonar Server') {
-                            sh "${scannerHome}/bin/sonar-scanner"
-                        }
-                    }
-                }
+                // stage('SonarQube analysis') {
+                //     steps{
+                //         withSonarQubeEnv('Sonar Server') {
+                //             sh "${scannerHome}/bin/sonar-scanner"
+                //         }
+                //     }
+                // }
                 stage('Building image') {
                     steps{
                         script {
