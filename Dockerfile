@@ -7,4 +7,4 @@ RUN mvn -f /home/app/pom.xml clean package
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "/home/app/target/logging-service-1.0-0.jar"]
+CMD ["java", "-jar", "/home/app/target/logging-service-1.0.0.jar"]
