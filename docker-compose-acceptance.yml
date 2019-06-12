@@ -4,6 +4,6 @@ services:
   logging:
     image: yoksar/logging-service-acceptance
     container_name: "logging-service"
-    command: java -jar /usr/src/target/logging-service-1.0.0.jar
+    # command: java -jar /usr/src/target/logging-service-1.0.0.jar
     ports:
       - 20080:8080
